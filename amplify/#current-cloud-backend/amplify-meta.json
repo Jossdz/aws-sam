@@ -1,0 +1,62 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplifyapp-20190813214632-authRole",
+			"UnauthRoleArn": "arn:aws:iam::826241403731:role/amplifyapp-20190813214632-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::826241403731:role/amplifyapp-20190813214632-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplifyapp-20190813214632-deployment",
+			"UnauthRoleName": "amplifyapp-20190813214632-unauthRole",
+			"StackName": "amplifyapp-20190813214632",
+			"StackId": "arn:aws:cloudformation:us-east-1:826241403731:stack/amplifyapp-20190813214632/ba180690-be3d-11e9-b1a4-0a6fb8e9c8ee"
+		}
+	},
+	"function": {
+		"cryptofunction": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [],
+			"lastBuildTimeStamp": "2019-08-14T03:35:42.207Z",
+			"lastPackageTimeStamp": "2019-08-14T03:35:42.998Z",
+			"distZipFilename": "cryptofunction-1565753742-latest-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplifyapp-20190813214632-deployment/amplify-cfn-templates/function/cryptofunction-cloudformation-template.json",
+				"logicalId": "functioncryptofunction"
+			},
+			"lastPushTimeStamp": "2019-08-14T03:36:51.649Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:826241403731:function:cryptofunction",
+				"Name": "cryptofunction"
+			},
+			"lastPushDirHash": "uM4zTri+Hj2fSP+tlRjZE3/wd7s="
+		}
+	},
+	"api": {
+		"cryptoapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "cryptofunction",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplifyapp-20190813214632-deployment/amplify-cfn-templates/api/cryptoapi-cloudformation-template.json",
+				"logicalId": "apicryptoapi"
+			},
+			"lastPushTimeStamp": "2019-08-14T03:36:51.648Z",
+			"output": {
+				"ApiName": "cryptoapi",
+				"RootUrl": "https://rxll0ho1uh.execute-api.us-east-1.amazonaws.com/Prod"
+			},
+			"lastPushDirHash": "9iPZLaTuZGgr8JaBR7hmlmQ2sj0="
+		}
+	}
+}

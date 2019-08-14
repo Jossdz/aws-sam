@@ -1,0 +1,20 @@
+{
+    "projectName": "amplifyapp",
+    "projectPath": "/Users/joss/Documents/Dev/amplify-app",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/Users/joss/.nvm/versions/node/v10.14.2/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "build",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/Users/joss/.nvm/versions/node/v10.14.2/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}
